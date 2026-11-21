@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fast &amp; Accessible Web – Performance and Accessibility Project</title>
+  <meta name="description" content="A beginner project showing how to make web pages faster and accessible to everyone.">
+  <meta name="theme-color" content="#0f2a3d">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6e6e'/%3E%3Cpath d='M8 17l5 5 11-12' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+
+  <link rel="preload" as="image" href="assets/images/hero-1000.webp" type="image/webp"
+        imagesrcset="assets/images/hero-480.webp 480w, assets/images/hero-1000.webp 1000w"
+        imagesizes="(min-width: 900px) 520px, 90vw">
+
+  <link rel="stylesheet" href="style.min.css">
+
+  <script src="script.min.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="FastAccess – go to top of page">FastAccess</a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle-text">Menu</span>
+      </button>
+
+      <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#performance">Performance</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-title">Pages that load fast and work for everyone</h1>
+          <p class="lead">Speed and accessibility are not extras. They decide whether a visitor can use your site at all. This project shows the practical steps.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#performance">See the performance steps</a>
+            <a class="btn btn-outline" href="#accessibility">See the accessibility steps</a>
+          </div>
+        </div>
+
+        <picture>
+          <source type="image/webp" srcset="assets/images/hero-480.webp 480w, assets/images/hero-1000.webp 1000w" sizes="(min-width: 900px) 520px, 90vw">
+          <img src="assets/images/hero-1000.jpg" srcset="assets/images/hero-480.jpg 480w, assets/images/hero-1000.jpg 1000w"
+               sizes="(min-width: 900px) 520px, 90vw" width="1000" height="600" fetchpriority="high" decoding="async"
+               alt="Illustration of a web page in a browser window with a nearly full loading bar and simple content blocks">
+        </picture>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container narrow">
+        <h2 id="about-title">About this project</h2>
+        <p>A <strong>performance</strong>-focused page loads quickly, even on slow phones and weak networks. An <strong>accessible</strong> page can be used by people who rely on screen readers, keyboards, captions, or high contrast.</p>
+        <p>The two goals support each other. Clean, semantic HTML is smaller, easier for assistive technology to read, and faster for browsers to parse. This site is a small demonstration of both.</p>
+      </div>
+    </section>
+
+    <section id="features" class="section section-alt" aria-labelledby="features-title">
+      <div class="container">
+        <h2 id="features-title">Optimization techniques used</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Semantic HTML</h3>
+            <p>Elements such as <code>header</code>, <code>nav</code>, <code>main</code> and <code>footer</code> describe the page structure to browsers and screen readers.</p>
+          </article>
+          <article class="card">
+            <h3>Optimized images</h3>
+            <p>Compressed WebP with JPG fallback, responsive sizes, explicit dimensions, and lazy loading below the fold.</p>
+          </article>
+          <article class="card">
+            <h3>Lean CSS and JavaScript</h3>
+            <p>One stylesheet, one small script, both minified for production, with no libraries or frameworks.</p>
+          </article>
+          <article class="card">
+            <h3>Fast font loading</h3>
+            <p>A system font stack means no font files to download, so text appears immediately.</p>
+          </article>
+          <article class="card">
+            <h3>Keyboard support</h3>
+            <p>Every link, button and form field can be reached with Tab, and each shows a clear focus outline.</p>
+          </article>
+          <article class="card">
+            <h3>Reduced motion</h3>
+            <p>Animations are minimal and switch off for visitors who ask their device to reduce motion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="performance" class="section" aria-labelledby="perf-title">
+      <div class="container split">
+        <div>
+          <h2 id="perf-title">Performance</h2>
+          <article>
+            <h3>Loading speed</h3>
+            <p>Fewer requests and smaller files mean a faster first paint. Scripts use <code>defer</code> so they never block rendering.</p>
+          </article>
+          <article>
+            <h3>Image optimization</h3>
+            <p>Images are resized to the sizes actually displayed, compressed, and served as WebP where the browser supports it. Images below the fold use <code>loading="lazy"</code>.</p>
+          </article>
+          <article>
+            <h3>CSS improvements</h3>
+            <p>CSS variables remove repeated values, shared classes remove duplicated rules, and simple class selectors keep matching fast.</p>
+          </article>
+        </div>
+        <picture>
+          <source type="image/webp" srcset="assets/images/performance-480.webp 480w, assets/images/performance-1000.webp 1000w" sizes="(min-width: 900px) 480px, 90vw">
+          <img src="assets/images/performance-1000.jpg" srcset="assets/images/performance-480.jpg 480w, assets/images/performance-1000.jpg 1000w"
+               sizes="(min-width: 900px) 480px, 90vw" width="1000" height="600" loading="lazy" decoding="async"
+               alt="Illustration of paired bar charts: three tall grey bars for before optimization and three shorter teal bars for after">
+        </picture>
+      </div>
+    </section>
+    <section id="accessibility" class="section section-alt" aria-labelledby="a11y-title">
+      <div class="container split split-reverse">
+        <picture>
+          <source type="image/webp" srcset="assets/images/accessibility-480.webp 480w, assets/images/accessibility-1000.webp 1000w" sizes="(min-width: 900px) 480px, 90vw">
+          <img src="assets/images/accessibility-1000.jpg" srcset="assets/images/accessibility-480.jpg 480w, assets/images/accessibility-1000.jpg 1000w"
+               sizes="(min-width: 900px) 480px, 90vw" width="1000" height="600" loading="lazy" decoding="async"
+               alt="Illustration of a row of keyboard keys with a yellow focus ring around one key, above two high-contrast color bars">
+        </picture>
+        <div>
+          <h2 id="a11y-title">Accessibility</h2>
+          <article>
+            <h3>Screen readers</h3>
+            <p>Landmarks, a clear heading order, image descriptions and labelled controls let screen readers announce the page accurately.</p>
+          </article>
+          <article>
+            <h3>Keyboard navigation</h3>
+            <p>Press <kbd>Tab</kbd> to move forward and <kbd>Shift</kbd> + <kbd>Tab</kbd> to go back. Use <kbd>Enter</kbd> to follow links and <kbd>Esc</kbd> to close the mobile menu.</p>
+          </article>
+          <article>
+            <h3>Color contrast</h3>
+            <p>Text and background colors are chosen to meet the WCAG AA ratio of 4.5:1 for normal text. Verify with a contrast checker before you rely on any value.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container narrow">
+        <h2 id="contact-title">Contact</h2>
+        <p>Fields marked with <span aria-hidden="true">*</span><span class="visually-hidden">an asterisk</span> are required.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Full name <span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+            <p class="error" id="name-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+            <p class="error" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" required minlength="10" aria-describedby="message-hint message-error"></textarea>
+            <p class="hint" id="message-hint">At least 10 characters.</p>
+            <p class="error" id="message-error" role="alert"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send message</button>
+          
+          <p id="formStatus" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="brand-footer">FastAccess</p>
+        <p>A Week 4 practical: Enhancing Web Page Performance and Accessibility.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#performance">Performance</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="copyright">&copy; <span id="year">2026</span> FastAccess student project. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
